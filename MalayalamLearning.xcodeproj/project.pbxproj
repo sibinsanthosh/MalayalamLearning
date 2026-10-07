@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0062E18DD7E2B6ED95070846 /* v11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B21D6919C778B928ADF5BA3 /* v11.mp3 */; };
+		04D38B83FB45E0B7F790031A /* v4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 209B38EED8B3085CC56CE1D7 /* v4.mp3 */; };
+		05CFEE5E1B06380EE9F58441 /* LetterQuizGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045E083754F475BA76C66FE /* LetterQuizGameScreen.swift */; };
+		06B5DC32CFEAAC5968A2C84B /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 635646BB4CB3B6312BC85310 /* pop.mp3 */; };
+		06D98396B212507D299B04A7 /* c3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1376290BC32199F3C7B7E974 /* c3.m4a */; };
+		0B22759E01CAB8EA99CFF33C /* c24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 120ED20797B9F0CE7B629698 /* c24.mp3 */; };
+		128CF026FFDE9DC3091985EA /* MemoryMatchGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A408F58FD8A83E05D809C /* MemoryMatchGameScreen.swift */; };
+		12B444B03FD6E338EB3F619E /* c34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0E3545D78AAE6E1F81C19FD /* c34.mp3 */; };
+		14C5AB5B48F68A662B5816EF /* c6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 072FA69D97159C9744359E2F /* c6.mp3 */; };
+		16AFE8FB45EC732B7A119475 /* v1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6A337E302559758141EE705 /* v1.mp3 */; };
+		16B908577C0AAFFAC60D7DC7 /* v13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD87BA1545DB6288B7F75FFB /* v13.mp3 */; };
+		20570031418FE5E5656352CD /* c32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA774A322B4E3B49F8FFC55D /* c32.mp3 */; };
+		241506A416FC2DE203C1BE0C /* c13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50FA624E8474089E92C23EAA /* c13.mp3 */; };
+		246508DE9037ABDF56578B08 /* badge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50E11DEF64EE572CC3AD31FA /* badge.mp3 */; };
+		25152CD8A788A3743A76802B /* c19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69483008223DEE90460D2726 /* c19.mp3 */; };
+		282A7BBF3B73760AF59D2D9B /* olam-enml.csv in Resources */ = {isa = PBXBuildFile; fileRef = 361DF80CB2686C64D11228B7 /* olam-enml.csv */; };
+		2DD865692039E40177C1BDC0 /* c7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0FD5F09BD254580A3B1BD10E /* c7.mp3 */; };
+		31E5D2CC9B66031B406A2054 /* v7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A693BBBE3B376C7F41602C8 /* v7.mp3 */; };
+		32EE803C9601493A5F3A6C3D /* DictionaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB29B03F57C410FFAEFFE1F /* DictionaryManager.swift */; };
+		330A776FB38A73273C328E35 /* c30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB54E317B39AF404DB07C901 /* c30.mp3 */; };
+		36008D6F47B46936552EC555 /* c4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B7753FE6D064A973212722A /* c4.mp3 */; };
+		36E150C61A513FE8562667C1 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C06A3ABFE24B04E140377E /* DataRepository.swift */; };
+		3A0B4E8053974F06856D4820 /* c15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4394DF67931236C50F08DAE /* c15.mp3 */; };
+		3B0443C22F0A50F24FF9796A /* CatchTheLetterGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7155ADB0E75C2DDA69DA /* CatchTheLetterGameScreen.swift */; };
+		3C2916B2879F64A016D20C9A /* c22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FDDCA39E1162934A94E01048 /* c22.mp3 */; };
+		3E243C9F3DD4690F1FFBC8C3 /* c10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D4A5B52A69AEB09ADFCDD8D1 /* c10.mp3 */; };
+		3EC226278A60BC941123F9A6 /* v12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80A75BD4AD52BFB5804E77E4 /* v12.mp3 */; };
+		40127E6190ADF5EDD57F49CB /* c14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D607F32095CF255D6D8D1A4F /* c14.mp3 */; };
+		49EB5A63944D6486F470C6AA /* c36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E54EE589770A604013C5A01 /* c36.mp3 */; };
+		4DE96B334B4EF438CC680779 /* v8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EEEC11B358C10ECD4AD09 /* v8.mp3 */; };
+		5055BC0F78CCD31E168A8952 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA79E31B0E7783EE7E0666 /* Models.swift */; };
+		611CFF0EC058CE1A89BB8A57 /* c5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C2CB986D97C70F90E09F8717 /* c5.mp3 */; };
+		62B4E0B29C40A187DE763D6A /* DictionaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D651D86D9815FDBB44F37 /* DictionaryScreen.swift */; };
+		638AE933499D01E2C7729C35 /* MalayalamLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE605E782C22BA05A0E3AA7 /* MalayalamLearningApp.swift */; };
+		6488A50603BBAD13E1672BD2 /* v2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAA58D3800BECFA95B143B9 /* v2.mp3 */; };
+		6B8F6E0704EE40E7DA311616 /* WordMatchGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812A5FFDE1F6710B3A0C009F /* WordMatchGameScreen.swift */; };
+		6D0CE266CC20BF0BDD2A5504 /* c26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94796F087AFA82AB412D09C2 /* c26.mp3 */; };
+		6DDC6BC6A64D6DC22DDC6AC3 /* v5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A140DA760D76F26AE2934A6 /* v5.mp3 */; };
+		735E2DFCF9EC8706483AE42A /* v6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74EBC99BF3097EF83B8D2EE3 /* v6.mp3 */; };
+		799ED328A2E6BF0D7D123B8C /* c18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E88193C3A6A69113489B66 /* c18.mp3 */; };
+		894673D383CFE07DF521ECAE /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BDD527BBF38E6C42894E37 /* BannerAdView.swift */; };
+		8980AA64329B49B13E2DCBAC /* Pods_MalayalamLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E50B2BE4BD06379C328910E8 /* Pods_MalayalamLearning.framework */; };
+		9065BBFA1AE41D7075806C99 /* c17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B94816F1C655883EC87C1F9A /* c17.mp3 */; };
+		92AAA0D9899E07DFD1F964FC /* BalloonPopGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB13A68E2099B57F3E7D79 /* BalloonPopGameScreen.swift */; };
+		961C66C5463C5E35FF7FEE3D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57AF0F23F93FFEFD403DDB /* MainViewModel.swift */; };
+		96D5B896628CC8F92FC949AB /* c11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D971DAF475FBBBFD10554B1 /* c11.mp3 */; };
+		9F83844A3C413FFA7D90E4E1 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCA4EAABCE634358BAAA7C /* HomeScreen.swift */; };
+		A6D4F40EDAB8886D21D8A76C /* v3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06060A7FD64465A78C66E311 /* v3.mp3 */; };
+		B0072A48AC8397B732544D6A /* GameSelectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2B2AB804A70C5B531C316 /* GameSelectScreen.swift */; };
+		B3985B4F86149C8FB86D680E /* LetterDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C344FBCB93774D07A2147C4 /* LetterDetailScreen.swift */; };
+		B49B86BAA858314EDF9878E6 /* c1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147AB0CEBE639AB1E196F2BE /* c1.mp3 */; };
+		B55F853B2E0B9E9478B64F77 /* TracingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580B279692128E76F483310D /* TracingScreen.swift */; };
+		BEBF8EACE2AADD3D6F19DAE3 /* c21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8FD48DCC00415586456BDFEB /* c21.mp3 */; };
+		CD10B70D5D7A924BF15B9499 /* StoryDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F64315CC744DBF18B52E9A6 /* StoryDetailScreen.swift */; };
+		D2CAD48F4372151BAD6D41ED /* c31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE7C73F91577E7C48977BE6 /* c31.mp3 */; };
+		D71D1F3F3906ED088A3E2716 /* c27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03C39265CA227FD25317447C /* c27.mp3 */; };
+		D853A6DB67C51D72D58C0F4B /* c28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECAD99F7030778BEA5AD134F /* c28.mp3 */; };
+		D916A2F04075B9B5B4ED94E5 /* c35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F6D28FD4162781C5BFCE82 /* c35.mp3 */; };
+		DCE12282CAF882A819DD131F /* c33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A383A7271114CD8B4C9406C /* c33.mp3 */; };
+		E5C25B58EF9D73467727FA1E /* c20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E830E545805AF65D45BA71A /* c20.mp3 */; };
+		E848BCA73F53F989D4C71B7D /* DashboardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C687DD20785643D6B5046CC4 /* DashboardCard.swift */; };
+		E92FE5E0374BAB6D139704BC /* c2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 499138BE82C69BD251DB853D /* c2.mp3 */; };
+		EA0D7044EC394734BEA7D79E /* v10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B64D1DBA9ECAEFA8FF14C51 /* v10.mp3 */; };
+		ED1F8BD025DF01660F94B52A /* transition.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C17D403E9430CD36322888CF /* transition.mp3 */; };
+		ED52108143F17255918C51AA /* AlphabetGridScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304C4E806CF775B0F7F636FF /* AlphabetGridScreen.swift */; };
+		EF8FFD4D308DB0852C979A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3EBEBE8F76F45AC462F6BA /* Assets.xcassets */; };
+		EFCE2636DE6FF5D87D5FD0AB /* c9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A767F3AF78E85B06D60AD0B /* c9.mp3 */; };
+		F0FC8226A228C89924B6E34F /* c29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EB70459187C44627CFA7089 /* c29.mp3 */; };
+		F46A390DBDA1045455472F62 /* c8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8B92DF3ACED0262E2E7E433 /* c8.mp3 */; };
+		F50D6CF22A7FE97ACB7DB227 /* InterstitialAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825B6A52EB601D7DAE95F5DE /* InterstitialAdManager.swift */; };
+		F580349C6058AFD62794EB73 /* StorySelectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235B0920D91E1B28FD3FA2 /* StorySelectScreen.swift */; };
+		F82265CDBB1A43FCB5B4CFC5 /* v9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E98B3F8B30CD10254D579517 /* v9.mp3 */; };
+		F8EEA97F94D5304ED9CE177C /* c16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F64E10BA7D3846EFCC04B47 /* c16.mp3 */; };
+		FB474AFD11EFE711D25DF7FE /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17551ADC648C8CFE9E2C8459 /* AppButton.swift */; };
+		FD58FEBEE31F5CA24300E1D0 /* c12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D00C0A73BD3CE32852D81594 /* c12.mp3 */; };
+		FF5BBEE9F4D8D35AB0690F20 /* c23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CAD007AF974B09CAF3F28BC /* c23.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03C39265CA227FD25317447C /* c27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c27.mp3; sourceTree = "<group>"; };
+		06060A7FD64465A78C66E311 /* v3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v3.mp3; sourceTree = "<group>"; };
+		072FA69D97159C9744359E2F /* c6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c6.mp3; sourceTree = "<group>"; };
+		08BDD527BBF38E6C42894E37 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		0D971DAF475FBBBFD10554B1 /* c11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c11.mp3; sourceTree = "<group>"; };
+		0DD821A849156CD5CE686D10 /* Malayalam Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Malayalam Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E830E545805AF65D45BA71A /* c20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c20.mp3; sourceTree = "<group>"; };
+		0FD5F09BD254580A3B1BD10E /* c7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c7.mp3; sourceTree = "<group>"; };
+		120ED20797B9F0CE7B629698 /* c24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c24.mp3; sourceTree = "<group>"; };
+		1376290BC32199F3C7B7E974 /* c3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = c3.m4a; sourceTree = "<group>"; };
+		147AB0CEBE639AB1E196F2BE /* c1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c1.mp3; sourceTree = "<group>"; };
+		17551ADC648C8CFE9E2C8459 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		1EB70459187C44627CFA7089 /* c29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c29.mp3; sourceTree = "<group>"; };
+		1FEB13A68E2099B57F3E7D79 /* BalloonPopGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonPopGameScreen.swift; sourceTree = "<group>"; };
+		209B38EED8B3085CC56CE1D7 /* v4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v4.mp3; sourceTree = "<group>"; };
+		21468A4E63CB2BFE9F6FC9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B21D6919C778B928ADF5BA3 /* v11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v11.mp3; sourceTree = "<group>"; };
+		2B7753FE6D064A973212722A /* c4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c4.mp3; sourceTree = "<group>"; };
+		2F64315CC744DBF18B52E9A6 /* StoryDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailScreen.swift; sourceTree = "<group>"; };
+		304C4E806CF775B0F7F636FF /* AlphabetGridScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetGridScreen.swift; sourceTree = "<group>"; };
+		361DF80CB2686C64D11228B7 /* olam-enml.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "olam-enml.csv"; sourceTree = "<group>"; };
+		3CAD007AF974B09CAF3F28BC /* c23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c23.mp3; sourceTree = "<group>"; };
+		3FB29B03F57C410FFAEFFE1F /* DictionaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryManager.swift; sourceTree = "<group>"; };
+		499138BE82C69BD251DB853D /* c2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c2.mp3; sourceTree = "<group>"; };
+		4FAA58D3800BECFA95B143B9 /* v2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v2.mp3; sourceTree = "<group>"; };
+		50E11DEF64EE572CC3AD31FA /* badge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = badge.mp3; sourceTree = "<group>"; };
+		50FA624E8474089E92C23EAA /* c13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c13.mp3; sourceTree = "<group>"; };
+		57C2B2AB804A70C5B531C316 /* GameSelectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectScreen.swift; sourceTree = "<group>"; };
+		580B279692128E76F483310D /* TracingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingScreen.swift; sourceTree = "<group>"; };
+		5A693BBBE3B376C7F41602C8 /* v7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v7.mp3; sourceTree = "<group>"; };
+		5B64D1DBA9ECAEFA8FF14C51 /* v10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v10.mp3; sourceTree = "<group>"; };
+		5F64E10BA7D3846EFCC04B47 /* c16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c16.mp3; sourceTree = "<group>"; };
+		635646BB4CB3B6312BC85310 /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
+		638D651D86D9815FDBB44F37 /* DictionaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryScreen.swift; sourceTree = "<group>"; };
+		69483008223DEE90460D2726 /* c19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c19.mp3; sourceTree = "<group>"; };
+		6C344FBCB93774D07A2147C4 /* LetterDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterDetailScreen.swift; sourceTree = "<group>"; };
+		6D9EEEC11B358C10ECD4AD09 /* v8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v8.mp3; sourceTree = "<group>"; };
+		6E54EE589770A604013C5A01 /* c36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c36.mp3; sourceTree = "<group>"; };
+		74EBC99BF3097EF83B8D2EE3 /* v6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v6.mp3; sourceTree = "<group>"; };
+		7A140DA760D76F26AE2934A6 /* v5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v5.mp3; sourceTree = "<group>"; };
+		7A383A7271114CD8B4C9406C /* c33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c33.mp3; sourceTree = "<group>"; };
+		7FE605E782C22BA05A0E3AA7 /* MalayalamLearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalayalamLearningApp.swift; sourceTree = "<group>"; };
+		80A75BD4AD52BFB5804E77E4 /* v12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v12.mp3; sourceTree = "<group>"; };
+		812A5FFDE1F6710B3A0C009F /* WordMatchGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMatchGameScreen.swift; sourceTree = "<group>"; };
+		825B6A52EB601D7DAE95F5DE /* InterstitialAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdManager.swift; sourceTree = "<group>"; };
+		8FD48DCC00415586456BDFEB /* c21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c21.mp3; sourceTree = "<group>"; };
+		93E88193C3A6A69113489B66 /* c18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c18.mp3; sourceTree = "<group>"; };
+		94796F087AFA82AB412D09C2 /* c26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c26.mp3; sourceTree = "<group>"; };
+		98F6D28FD4162781C5BFCE82 /* c35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c35.mp3; sourceTree = "<group>"; };
+		9A767F3AF78E85B06D60AD0B /* c9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c9.mp3; sourceTree = "<group>"; };
+		A6A337E302559758141EE705 /* v1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v1.mp3; sourceTree = "<group>"; };
+		AB3EBEBE8F76F45AC462F6BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD87BA1545DB6288B7F75FFB /* v13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v13.mp3; sourceTree = "<group>"; };
+		B0E3545D78AAE6E1F81C19FD /* c34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c34.mp3; sourceTree = "<group>"; };
+		B94816F1C655883EC87C1F9A /* c17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c17.mp3; sourceTree = "<group>"; };
+		BACB7155ADB0E75C2DDA69DA /* CatchTheLetterGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchTheLetterGameScreen.swift; sourceTree = "<group>"; };
+		BDBCA4EAABCE634358BAAA7C /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		C045E083754F475BA76C66FE /* LetterQuizGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterQuizGameScreen.swift; sourceTree = "<group>"; };
+		C17D403E9430CD36322888CF /* transition.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = transition.mp3; sourceTree = "<group>"; };
+		C2CB986D97C70F90E09F8717 /* c5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c5.mp3; sourceTree = "<group>"; };
+		C4394DF67931236C50F08DAE /* c15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c15.mp3; sourceTree = "<group>"; };
+		C687DD20785643D6B5046CC4 /* DashboardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCard.swift; sourceTree = "<group>"; };
+		D00C0A73BD3CE32852D81594 /* c12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c12.mp3; sourceTree = "<group>"; };
+		D4A5B52A69AEB09ADFCDD8D1 /* c10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c10.mp3; sourceTree = "<group>"; };
+		D607F32095CF255D6D8D1A4F /* c14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c14.mp3; sourceTree = "<group>"; };
+		D6BA79E31B0E7783EE7E0666 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DA774A322B4E3B49F8FFC55D /* c32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c32.mp3; sourceTree = "<group>"; };
+		DBC5456328CD6FC2F9D0F399 /* Pods-MalayalamLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalayalamLearning.release.xcconfig"; path = "Target Support Files/Pods-MalayalamLearning/Pods-MalayalamLearning.release.xcconfig"; sourceTree = "<group>"; };
+		DCE7C73F91577E7C48977BE6 /* c31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c31.mp3; sourceTree = "<group>"; };
+		DF57AF0F23F93FFEFD403DDB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E50B2BE4BD06379C328910E8 /* Pods_MalayalamLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MalayalamLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98B3F8B30CD10254D579517 /* v9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v9.mp3; sourceTree = "<group>"; };
+		ECAD99F7030778BEA5AD134F /* c28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c28.mp3; sourceTree = "<group>"; };
+		EE235B0920D91E1B28FD3FA2 /* StorySelectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySelectScreen.swift; sourceTree = "<group>"; };
+		F0C06A3ABFE24B04E140377E /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		F8B92DF3ACED0262E2E7E433 /* c8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c8.mp3; sourceTree = "<group>"; };
+		FA7A408F58FD8A83E05D809C /* MemoryMatchGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMatchGameScreen.swift; sourceTree = "<group>"; };
+		FB54E317B39AF404DB07C901 /* c30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c30.mp3; sourceTree = "<group>"; };
+		FB752642D9DEBA3C8F809420 /* Pods-MalayalamLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalayalamLearning.debug.xcconfig"; path = "Target Support Files/Pods-MalayalamLearning/Pods-MalayalamLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		FDDCA39E1162934A94E01048 /* c22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c22.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F99F6E2C347E7F0F0662ED6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8980AA64329B49B13E2DCBAC /* Pods_MalayalamLearning.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09443CEBEFB3AD0BEEE86EB3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AB3EBEBE8F76F45AC462F6BA /* Assets.xcassets */,
+				21468A4E63CB2BFE9F6FC9EE /* Info.plist */,
+				7FE605E782C22BA05A0E3AA7 /* MalayalamLearningApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1B0898FE3D708F4E0BA5788B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				304C4E806CF775B0F7F636FF /* AlphabetGridScreen.swift */,
+				1FEB13A68E2099B57F3E7D79 /* BalloonPopGameScreen.swift */,
+				BACB7155ADB0E75C2DDA69DA /* CatchTheLetterGameScreen.swift */,
+				638D651D86D9815FDBB44F37 /* DictionaryScreen.swift */,
+				57C2B2AB804A70C5B531C316 /* GameSelectScreen.swift */,
+				BDBCA4EAABCE634358BAAA7C /* HomeScreen.swift */,
+				6C344FBCB93774D07A2147C4 /* LetterDetailScreen.swift */,
+				C045E083754F475BA76C66FE /* LetterQuizGameScreen.swift */,
+				FA7A408F58FD8A83E05D809C /* MemoryMatchGameScreen.swift */,
+				2F64315CC744DBF18B52E9A6 /* StoryDetailScreen.swift */,
+				EE235B0920D91E1B28FD3FA2 /* StorySelectScreen.swift */,
+				580B279692128E76F483310D /* TracingScreen.swift */,
+				812A5FFDE1F6710B3A0C009F /* WordMatchGameScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		410C228269673A985E900F06 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF57AF0F23F93FFEFD403DDB /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		50682C4AD44110E24815BB22 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				17551ADC648C8CFE9E2C8459 /* AppButton.swift */,
+				08BDD527BBF38E6C42894E37 /* BannerAdView.swift */,
+				C687DD20785643D6B5046CC4 /* DashboardCard.swift */,
+				825B6A52EB601D7DAE95F5DE /* InterstitialAdManager.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		61DC68659AEC23A827E1AFF2 = {
+			isa = PBXGroup;
+			children = (
+				09443CEBEFB3AD0BEEE86EB3 /* App */,
+				50682C4AD44110E24815BB22 /* Components */,
+				9079D1B7277999896D40321F /* Data */,
+				BC3B664C5265542E2BCC6134 /* Raw */,
+				1B0898FE3D708F4E0BA5788B /* Screens */,
+				410C228269673A985E900F06 /* ViewModels */,
+				E3874193398A5D4DA97AA8D0 /* Products */,
+				E6D846571B8A5801B01A0241 /* Pods */,
+				AFB2BD6B8F8697B116E3E153 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9079D1B7277999896D40321F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F0C06A3ABFE24B04E140377E /* DataRepository.swift */,
+				3FB29B03F57C410FFAEFFE1F /* DictionaryManager.swift */,
+				D6BA79E31B0E7783EE7E0666 /* Models.swift */,
+				361DF80CB2686C64D11228B7 /* olam-enml.csv */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AFB2BD6B8F8697B116E3E153 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E50B2BE4BD06379C328910E8 /* Pods_MalayalamLearning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3B664C5265542E2BCC6134 /* Raw */ = {
+			isa = PBXGroup;
+			children = (
+				50E11DEF64EE572CC3AD31FA /* badge.mp3 */,
+				147AB0CEBE639AB1E196F2BE /* c1.mp3 */,
+				499138BE82C69BD251DB853D /* c2.mp3 */,
+				1376290BC32199F3C7B7E974 /* c3.m4a */,
+				2B7753FE6D064A973212722A /* c4.mp3 */,
+				C2CB986D97C70F90E09F8717 /* c5.mp3 */,
+				072FA69D97159C9744359E2F /* c6.mp3 */,
+				0FD5F09BD254580A3B1BD10E /* c7.mp3 */,
+				F8B92DF3ACED0262E2E7E433 /* c8.mp3 */,
+				9A767F3AF78E85B06D60AD0B /* c9.mp3 */,
+				D4A5B52A69AEB09ADFCDD8D1 /* c10.mp3 */,
+				0D971DAF475FBBBFD10554B1 /* c11.mp3 */,
+				D00C0A73BD3CE32852D81594 /* c12.mp3 */,
+				50FA624E8474089E92C23EAA /* c13.mp3 */,
+				D607F32095CF255D6D8D1A4F /* c14.mp3 */,
+				C4394DF67931236C50F08DAE /* c15.mp3 */,
+				5F64E10BA7D3846EFCC04B47 /* c16.mp3 */,
+				B94816F1C655883EC87C1F9A /* c17.mp3 */,
+				93E88193C3A6A69113489B66 /* c18.mp3 */,
+				69483008223DEE90460D2726 /* c19.mp3 */,
+				0E830E545805AF65D45BA71A /* c20.mp3 */,
+				8FD48DCC00415586456BDFEB /* c21.mp3 */,
+				FDDCA39E1162934A94E01048 /* c22.mp3 */,
+				3CAD007AF974B09CAF3F28BC /* c23.mp3 */,
+				120ED20797B9F0CE7B629698 /* c24.mp3 */,
+				94796F087AFA82AB412D09C2 /* c26.mp3 */,
+				03C39265CA227FD25317447C /* c27.mp3 */,
+				ECAD99F7030778BEA5AD134F /* c28.mp3 */,
+				1EB70459187C44627CFA7089 /* c29.mp3 */,
+				FB54E317B39AF404DB07C901 /* c30.mp3 */,
+				DCE7C73F91577E7C48977BE6 /* c31.mp3 */,
+				DA774A322B4E3B49F8FFC55D /* c32.mp3 */,
+				7A383A7271114CD8B4C9406C /* c33.mp3 */,
+				B0E3545D78AAE6E1F81C19FD /* c34.mp3 */,
+				98F6D28FD4162781C5BFCE82 /* c35.mp3 */,
+				6E54EE589770A604013C5A01 /* c36.mp3 */,
+				635646BB4CB3B6312BC85310 /* pop.mp3 */,
+				C17D403E9430CD36322888CF /* transition.mp3 */,
+				A6A337E302559758141EE705 /* v1.mp3 */,
+				4FAA58D3800BECFA95B143B9 /* v2.mp3 */,
+				06060A7FD64465A78C66E311 /* v3.mp3 */,
+				209B38EED8B3085CC56CE1D7 /* v4.mp3 */,
+				7A140DA760D76F26AE2934A6 /* v5.mp3 */,
+				74EBC99BF3097EF83B8D2EE3 /* v6.mp3 */,
+				5A693BBBE3B376C7F41602C8 /* v7.mp3 */,
+				6D9EEEC11B358C10ECD4AD09 /* v8.mp3 */,
+				E98B3F8B30CD10254D579517 /* v9.mp3 */,
+				5B64D1DBA9ECAEFA8FF14C51 /* v10.mp3 */,
+				2B21D6919C778B928ADF5BA3 /* v11.mp3 */,
+				80A75BD4AD52BFB5804E77E4 /* v12.mp3 */,
+				AD87BA1545DB6288B7F75FFB /* v13.mp3 */,
+			);
+			path = Raw;
+			sourceTree = "<group>";
+		};
+		E3874193398A5D4DA97AA8D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DD821A849156CD5CE686D10 /* Malayalam Learning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6D846571B8A5801B01A0241 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB752642D9DEBA3C8F809420 /* Pods-MalayalamLearning.debug.xcconfig */,
+				DBC5456328CD6FC2F9D0F399 /* Pods-MalayalamLearning.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94C71A80E5B3720F305FA021 /* MalayalamLearning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7978A3286939BB4C3E6D3E7B /* Build configuration list for PBXNativeTarget "MalayalamLearning" */;
+			buildPhases = (
+				9B3BD57770CF590D7719D653 /* [CP] Check Pods Manifest.lock */,
+				FCF8E4A203EED711FCBAFCAA /* Sources */,
+				0F2962A9920322DAEADE136B /* Resources */,
+				F99F6E2C347E7F0F0662ED6A /* Frameworks */,
+				80CACEA412A2C5B3F735287A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MalayalamLearning;
+			productName = MalayalamLearning;
+			productReference = 0DD821A849156CD5CE686D10 /* Malayalam Learning.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		180A0ABB2738C8716455E328 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 53DAD4BAAEAA7880A0D15D8C /* Build configuration list for PBXProject "MalayalamLearning" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 61DC68659AEC23A827E1AFF2;
+			minimizedProjectReferenceProxies = 1;
+			productRefGroup = E3874193398A5D4DA97AA8D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94C71A80E5B3720F305FA021 /* MalayalamLearning */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F2962A9920322DAEADE136B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8FFD4D308DB0852C979A10 /* Assets.xcassets in Resources */,
+				246508DE9037ABDF56578B08 /* badge.mp3 in Resources */,
+				B49B86BAA858314EDF9878E6 /* c1.mp3 in Resources */,
+				3E243C9F3DD4690F1FFBC8C3 /* c10.mp3 in Resources */,
+				96D5B896628CC8F92FC949AB /* c11.mp3 in Resources */,
+				FD58FEBEE31F5CA24300E1D0 /* c12.mp3 in Resources */,
+				241506A416FC2DE203C1BE0C /* c13.mp3 in Resources */,
+				40127E6190ADF5EDD57F49CB /* c14.mp3 in Resources */,
+				3A0B4E8053974F06856D4820 /* c15.mp3 in Resources */,
+				F8EEA97F94D5304ED9CE177C /* c16.mp3 in Resources */,
+				9065BBFA1AE41D7075806C99 /* c17.mp3 in Resources */,
+				799ED328A2E6BF0D7D123B8C /* c18.mp3 in Resources */,
+				25152CD8A788A3743A76802B /* c19.mp3 in Resources */,
+				E92FE5E0374BAB6D139704BC /* c2.mp3 in Resources */,
+				E5C25B58EF9D73467727FA1E /* c20.mp3 in Resources */,
+				BEBF8EACE2AADD3D6F19DAE3 /* c21.mp3 in Resources */,
+				3C2916B2879F64A016D20C9A /* c22.mp3 in Resources */,
+				FF5BBEE9F4D8D35AB0690F20 /* c23.mp3 in Resources */,
+				0B22759E01CAB8EA99CFF33C /* c24.mp3 in Resources */,
+				6D0CE266CC20BF0BDD2A5504 /* c26.mp3 in Resources */,
+				D71D1F3F3906ED088A3E2716 /* c27.mp3 in Resources */,
+				D853A6DB67C51D72D58C0F4B /* c28.mp3 in Resources */,
+				F0FC8226A228C89924B6E34F /* c29.mp3 in Resources */,
+				06D98396B212507D299B04A7 /* c3.m4a in Resources */,
+				330A776FB38A73273C328E35 /* c30.mp3 in Resources */,
+				D2CAD48F4372151BAD6D41ED /* c31.mp3 in Resources */,
+				20570031418FE5E5656352CD /* c32.mp3 in Resources */,
+				DCE12282CAF882A819DD131F /* c33.mp3 in Resources */,
+				12B444B03FD6E338EB3F619E /* c34.mp3 in Resources */,
+				D916A2F04075B9B5B4ED94E5 /* c35.mp3 in Resources */,
+				49EB5A63944D6486F470C6AA /* c36.mp3 in Resources */,
+				36008D6F47B46936552EC555 /* c4.mp3 in Resources */,
+				611CFF0EC058CE1A89BB8A57 /* c5.mp3 in Resources */,
+				14C5AB5B48F68A662B5816EF /* c6.mp3 in Resources */,
+				2DD865692039E40177C1BDC0 /* c7.mp3 in Resources */,
+				F46A390DBDA1045455472F62 /* c8.mp3 in Resources */,
+				EFCE2636DE6FF5D87D5FD0AB /* c9.mp3 in Resources */,
+				282A7BBF3B73760AF59D2D9B /* olam-enml.csv in Resources */,
+				06B5DC32CFEAAC5968A2C84B /* pop.mp3 in Resources */,
+				ED1F8BD025DF01660F94B52A /* transition.mp3 in Resources */,
+				16AFE8FB45EC732B7A119475 /* v1.mp3 in Resources */,
+				EA0D7044EC394734BEA7D79E /* v10.mp3 in Resources */,
+				0062E18DD7E2B6ED95070846 /* v11.mp3 in Resources */,
+				3EC226278A60BC941123F9A6 /* v12.mp3 in Resources */,
+				16B908577C0AAFFAC60D7DC7 /* v13.mp3 in Resources */,
+				6488A50603BBAD13E1672BD2 /* v2.mp3 in Resources */,
+				A6D4F40EDAB8886D21D8A76C /* v3.mp3 in Resources */,
+				04D38B83FB45E0B7F790031A /* v4.mp3 in Resources */,
+				6DDC6BC6A64D6DC22DDC6AC3 /* v5.mp3 in Resources */,
+				735E2DFCF9EC8706483AE42A /* v6.mp3 in Resources */,
+				31E5D2CC9B66031B406A2054 /* v7.mp3 in Resources */,
+				4DE96B334B4EF438CC680779 /* v8.mp3 in Resources */,
+				F82265CDBB1A43FCB5B4CFC5 /* v9.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80CACEA412A2C5B3F735287A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MalayalamLearning/Pods-MalayalamLearning-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MalayalamLearning/Pods-MalayalamLearning-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MalayalamLearning/Pods-MalayalamLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B3BD57770CF590D7719D653 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MalayalamLearning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCF8E4A203EED711FCBAFCAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED52108143F17255918C51AA /* AlphabetGridScreen.swift in Sources */,
+				FB474AFD11EFE711D25DF7FE /* AppButton.swift in Sources */,
+				92AAA0D9899E07DFD1F964FC /* BalloonPopGameScreen.swift in Sources */,
+				894673D383CFE07DF521ECAE /* BannerAdView.swift in Sources */,
+				3B0443C22F0A50F24FF9796A /* CatchTheLetterGameScreen.swift in Sources */,
+				E848BCA73F53F989D4C71B7D /* DashboardCard.swift in Sources */,
+				36E150C61A513FE8562667C1 /* DataRepository.swift in Sources */,
+				32EE803C9601493A5F3A6C3D /* DictionaryManager.swift in Sources */,
+				62B4E0B29C40A187DE763D6A /* DictionaryScreen.swift in Sources */,
+				B0072A48AC8397B732544D6A /* GameSelectScreen.swift in Sources */,
+				9F83844A3C413FFA7D90E4E1 /* HomeScreen.swift in Sources */,
+				F50D6CF22A7FE97ACB7DB227 /* InterstitialAdManager.swift in Sources */,
+				B3985B4F86149C8FB86D680E /* LetterDetailScreen.swift in Sources */,
+				05CFEE5E1B06380EE9F58441 /* LetterQuizGameScreen.swift in Sources */,
+				961C66C5463C5E35FF7FEE3D /* MainViewModel.swift in Sources */,
+				638AE933499D01E2C7729C35 /* MalayalamLearningApp.swift in Sources */,
+				128CF026FFDE9DC3091985EA /* MemoryMatchGameScreen.swift in Sources */,
+				5055BC0F78CCD31E168A8952 /* Models.swift in Sources */,
+				CD10B70D5D7A924BF15B9499 /* StoryDetailScreen.swift in Sources */,
+				F580349C6058AFD62794EB73 /* StorySelectScreen.swift in Sources */,
+				B55F853B2E0B9E9478B64F77 /* TracingScreen.swift in Sources */,
+				6B8F6E0704EE40E7DA311616 /* WordMatchGameScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1C452EC900AEB4FDDF186E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC5456328CD6FC2F9D0F399 /* Pods-MalayalamLearning.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CY8L268S88;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sibin.MalayalamLearning;
+				PRODUCT_NAME = "Malayalam Learning";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFC78D60D52CB64805541CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DD9E5C91FA397D0A6EC669F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB752642D9DEBA3C8F809420 /* Pods-MalayalamLearning.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CY8L268S88;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sibin.MalayalamLearning;
+				PRODUCT_NAME = "Malayalam Learning";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F68589B7914BB50B5E6A4EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53DAD4BAAEAA7880A0D15D8C /* Build configuration list for PBXProject "MalayalamLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F68589B7914BB50B5E6A4EAF /* Debug */,
+				BFC78D60D52CB64805541CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7978A3286939BB4C3E6D3E7B /* Build configuration list for PBXNativeTarget "MalayalamLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD9E5C91FA397D0A6EC669F2 /* Debug */,
+				1C452EC900AEB4FDDF186E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 180A0ABB2738C8716455E328 /* Project object */;
+}
