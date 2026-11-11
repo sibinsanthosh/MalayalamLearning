@@ -8,6 +8,7 @@ struct StoryDetailScreen: View {
     @Environment(\.dismiss) private var envDismiss
     @Environment(\.horizontalSizeClass) private var hSizeClass
     @State private var currentPage: Int = 0
+    @StateObject private var reader = ReadAlongController()
 
     private var totalPages: Int { story.pages.count }
     private var isLastPage: Bool { currentPage == totalPages - 1 }
@@ -60,6 +61,10 @@ struct StoryDetailScreen: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .toolbar(.hidden, for: .navigationBar)
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
+        .onChange(of: currentPage) { _, _ in reader.stop() }
+        .onDisappear { reader.stop() }
     }
 
     // MARK: – iPhone layout (original)
@@ -159,11 +164,9 @@ struct StoryDetailScreen: View {
                         // Story Text ScrollView
                         ScrollView {
                             VStack(alignment: .leading, spacing: 14) {
-                                Text(story.pages[currentPage].text)
-                                    .font(.system(size: 32, weight: .medium))
-                                    .foregroundColor(Color(hex: "2D2D2D"))
-                                    .lineSpacing(10)
-                                    .multilineTextAlignment(.leading)
+                                readAlongButton
+                                ReadAlongText(text: story.pages[currentPage].text, reader: reader,
+                                              fontSize: 32, alignment: .leading)
                             }
                             .padding(.horizontal, 32)
                             .padding(.vertical, 16)
@@ -216,7 +219,7 @@ struct StoryDetailScreen: View {
                                 }
                             }) {
                                 HStack(spacing: 6) {
-                                    Text(isLastPage ? "Finish Story 🎉" : "Next Page")
+                                    Text(isLastPage ? "Finish Story" : "Next Page")
                                     Image(systemName: isLastPage ? "checkmark" : "chevron.right")
                                 }
                                 .font(.system(size: 15, weight: .bold))
@@ -293,14 +296,14 @@ struct StoryDetailScreen: View {
 
     private var storyTextCard: some View {
         ScrollView {
-            Text(story.pages[currentPage].text)
-                .font(.system(size: 26, weight: .medium))
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(hex: "2D2D2D"))
-                .lineSpacing(8)
-                .padding(.horizontal, 24)
-                .padding(.vertical, 28)
-                .frame(maxWidth: .infinity)
+            VStack(spacing: 14) {
+                readAlongButton
+                ReadAlongText(text: story.pages[currentPage].text, reader: reader,
+                              fontSize: 26, alignment: .center)
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
+            .frame(maxWidth: .infinity)
         }
         .id(currentPage)
         .frame(maxHeight: .infinity)
@@ -367,7 +370,23 @@ struct StoryDetailScreen: View {
             }
     }
 
+    private var readAlongButton: some View {
+        Button {
+            if reader.isReading { reader.stop() } else { reader.read(story.pages[currentPage].text) }
+        } label: {
+            Label(reader.isReading ? "Stop" : "Read along", systemImage: reader.isReading ? "stop.fill" : "play.fill")
+                .font(.system(size: 17, weight: .heavy, design: .rounded))
+                .foregroundColor(.white)
+                .padding(.horizontal, 18)
+                .frame(minHeight: 46)
+                .background(Capsule().fill(Color(hex: "FF6B35")))
+        }
+        .buttonStyle(KidButtonStyle())
+    }
+
     private func goBack() {
+        reader.stop()
+        if isLastPage { ProgressStore.shared.recordStoryRead(story.id) }
         if let onDismiss = onDismiss {
             onDismiss()
         } else {
@@ -376,3 +395,122 @@ struct StoryDetailScreen: View {
     }
 }
 
+
+
+// MARK: - Read-along
+
+/// Steps through a page word by word, highlighting each one (and speaking it when a
+/// Malayalam voice is installed on the device).
+@MainActor
+final class ReadAlongController: ObservableObject {
+    @Published var current: Int?
+    @Published var isReading = false
+    private var task: Task<Void, Never>?
+
+    static func words(_ text: String) -> [String] {
+        text.split(whereSeparator: { $0 == " " || $0 == "\n" }).map(String.init)
+    }
+
+    func read(_ text: String, from start: Int = 0) {
+        stop()
+        let words = Self.words(text)
+        isReading = true
+        task = Task { [weak self] in
+            for i in start..<words.count {
+                guard let self, !Task.isCancelled else { return }
+                self.current = i
+                let spoken = Speaker.shared.sayMalayalam(words[i].trimmingCharacters(in: .punctuationCharacters), rate: 0.4)
+                let seconds = (spoken ? 0.5 : 0.35) + 0.08 * Double(words[i].count)
+                try? await Task.sleep(nanoseconds: UInt64(seconds * 1_000_000_000))
+            }
+            guard let self, !Task.isCancelled else { return }
+            self.isReading = false
+            try? await Task.sleep(nanoseconds: 600_000_000)
+            if !self.isReading { self.current = nil }
+        }
+    }
+
+    func tap(_ index: Int, word: String) {
+        stop()
+        current = index
+        Haptics.tap()
+        Speaker.shared.sayMalayalam(word.trimmingCharacters(in: .punctuationCharacters), rate: 0.4)
+    }
+
+    func stop() {
+        task?.cancel()
+        task = nil
+        isReading = false
+    }
+}
+
+struct ReadAlongText: View {
+    let text: String
+    @ObservedObject var reader: ReadAlongController
+    var fontSize: CGFloat
+    var alignment: HorizontalAlignment
+
+    var body: some View {
+        let words = ReadAlongController.words(text)
+        WordFlow(alignment: alignment, spacing: fontSize * 0.28, lineSpacing: fontSize * 0.35) {
+            ForEach(Array(words.enumerated()), id: \.offset) { i, word in
+                let on = reader.current == i
+                Text(word)
+                    .font(.system(size: fontSize, weight: on ? .bold : .medium))
+                    .foregroundColor(on ? Color(hex: "7B2300") : Color(hex: "2D2D2D"))
+                    .padding(.horizontal, 4)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(on ? Color(hex: "FFD54F") : .clear))
+                    .scaleEffect(on ? 1.08 : 1)
+                    .animation(.spring(response: 0.25, dampingFraction: 0.6), value: on)
+                    .onTapGesture { reader.tap(i, word: word) }
+                    .accessibilityAddTraits(.isButton)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: alignment == .leading ? .leading : .center)
+    }
+}
+
+/// Wraps children onto lines like text.
+struct WordFlow: Layout {
+    var alignment: HorizontalAlignment = .center
+    var spacing: CGFloat = 8
+    var lineSpacing: CGFloat = 8
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let rows = arrange(width: proposal.width ?? .infinity, subviews: subviews)
+        let height = rows.reduce(0) { $0 + $1.height } + lineSpacing * CGFloat(max(0, rows.count - 1))
+        let width = rows.map(\.width).max() ?? 0
+        return CGSize(width: proposal.width ?? width, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var y = bounds.minY
+        for row in arrange(width: bounds.width, subviews: subviews) {
+            var x = alignment == .leading ? bounds.minX : bounds.minX + (bounds.width - row.width) / 2
+            for i in row.indices {
+                let size = subviews[i].sizeThatFits(.unspecified)
+                subviews[i].place(at: CGPoint(x: x, y: y + (row.height - size.height) / 2), proposal: .unspecified)
+                x += size.width + spacing
+            }
+            y += row.height + lineSpacing
+        }
+    }
+
+    private struct Row { var indices: [Int] = []; var width: CGFloat = 0; var height: CGFloat = 0 }
+
+    private func arrange(width: CGFloat, subviews: Subviews) -> [Row] {
+        var rows: [Row] = [Row()]
+        for i in subviews.indices {
+            let size = subviews[i].sizeThatFits(.unspecified)
+            let extra = rows[rows.count - 1].indices.isEmpty ? size.width : size.width + spacing
+            if rows[rows.count - 1].width + extra > width, !rows[rows.count - 1].indices.isEmpty {
+                rows.append(Row())
+            }
+            let r = rows.count - 1
+            rows[r].width += rows[r].indices.isEmpty ? size.width : size.width + spacing
+            rows[r].height = max(rows[r].height, size.height)
+            rows[r].indices.append(i)
+        }
+        return rows
+    }
+}

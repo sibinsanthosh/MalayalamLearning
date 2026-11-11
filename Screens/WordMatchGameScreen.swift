@@ -28,6 +28,8 @@ struct WordMatchGameScreen: View {
             }
         }
         .navigationTitle("Word Match")
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: setupGame)
     }
@@ -135,6 +137,8 @@ struct WordMatchGameScreen: View {
         questionCount += 1
         if questionCount > totalQuestions {
             isGameOver = true
+            ProgressStore.shared.recordGameFinished()
+            InterstitialAdManager.shared.showAdIfAppropriate {}
             return
         }
         
@@ -158,10 +162,6 @@ struct WordMatchGameScreen: View {
             score += 1
         } else {
             feedbackIsCorrect = false
-        }
-        
-        if questionCount % 3 == 0 {
-            InterstitialAdManager.shared.showAdIfAppropriate {}
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

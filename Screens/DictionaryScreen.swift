@@ -67,9 +67,10 @@ struct DictionaryScreen: View {
             }
         }
         .navigationTitle("Dictionary")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Search English word...")
-        .onChange(of: searchText) { newValue in
+        .onChange(of: searchText) { _, newValue in
             performSearch(query: newValue)
         }
     }
@@ -302,8 +303,9 @@ struct IPadDictionaryView: View {
             }
         }
         .navigationTitle("Dictionary Explorer")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
-        .onChange(of: searchText) { newValue in
+        .onChange(of: searchText) { _, newValue in
             performSearch(query: newValue)
         }
         .onAppear {

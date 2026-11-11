@@ -36,10 +36,3 @@ struct Story: Identifiable, Hashable {
     let coverImageName: String
     let pages: [StoryPage]
 }
-
-struct Progress: Codable {
-    var points: Int = 124
-    var streak: Int = 5
-    var unlockedBadges: [String] = ["badge1", "badge2"]
-    var mastery: [String: Int] = [:]
-}

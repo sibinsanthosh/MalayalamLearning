@@ -1,273 +1,306 @@
 import SwiftUI
 
 struct TracingScreen: View {
-    @ObservedObject var viewModel: MainViewModel
-    @State private var currentLetter: Letter
-    
-    @State private var paths: [Path] = []
-    @State private var currentPath = Path()
-    @State private var progress: CGFloat = 0.0
-    @State private var showSuccess = false
-    
-    // Tracing verification state
-    @State private var visitedQuadrants = Set<Int>()
-    @State private var totalDistance: CGFloat = 0.0
-    @State private var lastPoint: CGPoint? = nil
-    
+    let items: [TraceItem]
+    @State private var index: Int
+
+    @ObservedObject private var store = ProgressStore.shared
+    @State private var mode: TraceMode = .guided
+    @State private var progress: Double = 0
+    @State private var attempt = 0
+    @State private var result: Result?
+    @State private var newBadges: [Badge] = []
+    @State private var confetti = 0
+    @State private var mood: MascotMood = .idle
+    @State private var message: String?
+    @StateObject private var freeModel = FreeWriteModel()
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.horizontalSizeClass) private var hSizeClass
 
+    struct Result: Equatable {
+        let stars: Int
+        let score: Int?
+    }
+
+    init(items: [TraceItem], startIndex: Int = 0) {
+        self.items = items
+        _index = State(initialValue: min(max(0, startIndex), max(0, items.count - 1)))
+    }
+
+    /// Kept for existing call sites: traces `letter`, then continues through its group.
     init(viewModel: MainViewModel, letter: Letter) {
-        self.viewModel = viewModel
-        self._currentLetter = State(initialValue: letter)
-    }
-    
-    private var nextLetter: Letter? {
-        let list = currentLetter.category == "vowel" ? viewModel.vowels : viewModel.consonants
-        if let idx = list.firstIndex(where: { $0.id == currentLetter.id }), idx + 1 < list.count {
-            return list[idx + 1]
-        }
-        return nil
+        let list = (letter.category == "vowel" ? viewModel.vowels : viewModel.consonants).map(TraceItem.init(letter:))
+        self.init(items: list, startIndex: list.firstIndex { $0.text == letter.char } ?? 0)
     }
 
-    /// Max width for the tracing UI column on iPad
-    private var tracingMaxWidth: CGFloat {
-        hSizeClass == .regular ? 600 : .infinity
-    }
-    
+    private var item: TraceItem { items[index] }
+    private var glyph: TraceGlyph { TraceGlyph.make(for: item.text) }
+    private var color: Color { DS.color(for: index) }
+    private var hasNext: Bool { index + 1 < items.count }
+    private var leftHanded: Bool { store.settings.leftHanded }
+
     var body: some View {
         ZStack {
-            Color(hex: "F8F8F5").ignoresSafeArea()
-            
-            // Centre the whole tracing column on iPad
-            HStack {
-                Spacer()
-                VStack {
-                    // Header
-                    Text(currentLetter.char)
-                        .font(.system(size: 22))
-                        .foregroundColor(.blue)
-                        .padding(.top)
-                    
-                    // Progress
-                    HStack {
-                        Text("Tracing")
-                            .font(.caption)
-                        Spacer()
-                        Text("\(Int(progress * 100))%")
-                            .foregroundColor(.blue)
+            DS.background.ignoresSafeArea()
+
+            VStack(spacing: 12) {
+                header
+                modePicker
+                if hSizeClass == .regular {
+                    HStack(spacing: 16) {
+                        if !leftHanded { sidePanel }
+                        boardCard
+                        if leftHanded { sidePanel }
                     }
-                    .padding(.horizontal)
-                    
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .blue))
-                        .padding(.horizontal)
-                    
-                    // Canvas
-                    GeometryReader { geometry in
-                        ZStack {
-                            // Guide Letter (Dotted)
-                            Text(currentLetter.char)
-                                .font(.system(size: 1000, weight: .bold))
-                                .minimumScaleFactor(0.01)
-                                .lineLimit(1)
-                                .foregroundColor(.gray.opacity(0.3))
-                                .frame(width: geometry.size.width * 0.94, height: geometry.size.height * 0.88)
-                                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-                            
-                            // User Drawing
-                            Canvas { context, size in
-                                for path in paths {
-                                    context.stroke(path, with: .color(.blue), lineWidth: 10)
-                                }
-                                context.stroke(currentPath, with: .color(.blue), lineWidth: 10)
-                            }
-                            .gesture(
-                                DragGesture(minimumDistance: 0)
-                                    .onChanged { value in
-                                        let newPoint = value.location
-                                        
-                                        let width = geometry.size.width
-                                        let height = geometry.size.height
-                                        let centerX = width / 2
-                                        let centerY = height / 2
-                                        
-                                        // Bounding Box / Active Area Check (ignore margin scribbles)
-                                        let minX = width * 0.03
-                                        let maxX = width * 0.97
-                                        let minY = height * 0.03
-                                        let maxY = height * 0.97
-                                        
-                                        guard newPoint.x >= minX && newPoint.x <= maxX &&
-                                              newPoint.y >= minY && newPoint.y <= maxY else {
-                                            return
-                                        }
-                                        
-                                        // Add to current path
-                                        if currentPath.isEmpty {
-                                            currentPath.move(to: newPoint)
-                                            lastPoint = newPoint
-                                        } else {
-                                            currentPath.addLine(to: newPoint)
-                                            
-                                            // Track drawing distance
-                                            if let last = lastPoint {
-                                                let dist = sqrt(pow(newPoint.x - last.x, 2) + pow(newPoint.y - last.y, 2))
-                                                totalDistance += dist
-                                            }
-                                            lastPoint = newPoint
-                                        }
-                                        
-                                        // Track quadrant coverage
-                                        let quad: Int
-                                        if newPoint.x < centerX {
-                                            quad = newPoint.y < centerY ? 1 : 3
-                                        } else {
-                                            quad = newPoint.y < centerY ? 2 : 4
-                                        }
-                                        visitedQuadrants.insert(quad)
-                                        
-                                        // Calculate progress (require both spatial coverage and minimum line length)
-                                        let targetDistance = (width + height) * 1.1
-                                        let distanceRatio = min(totalDistance / targetDistance, 1.0)
-                                        let quadrantRatio = CGFloat(visitedQuadrants.count) / 4.0
-                                        
-                                        progress = distanceRatio * quadrantRatio
-                                    }
-                                    .onEnded { _ in
-                                        paths.append(currentPath)
-                                        currentPath = Path()
-                                        lastPoint = nil
-                                        
-                                        // Only complete if they actually cover >= 95% of the quadrant + length check
-                                        if progress >= 0.95 {
-                                            progress = 1.0 // snap to 100%
-                                            viewModel.addPoints(10)
-                                            showSuccess = true
-                                        }
-                                    }
-                            )
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .shadow(radius: 2)
-                        .padding()
-                    }
-                    
-                    Button(action: {
-                        paths = []
-                        currentPath = Path()
-                        progress = 0
-                        visitedQuadrants.removeAll()
-                        totalDistance = 0.0
-                        lastPoint = nil
-                        showSuccess = false
-                    }) {
-                        Image(systemName: "arrow.counterclockwise")
-                            .font(.title)
-                            .padding()
-                    }
-                    
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Text(showSuccess ? "Done (+10 pts)" : "Trace to Finish")
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 56)
-                            .background(showSuccess ? Color.blue : Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(12)
-                    }
-                    .disabled(!showSuccess)
-                    .padding()
+                } else {
+                    boardCard
+                    bottomBar
                 }
-                .frame(maxWidth: tracingMaxWidth)
-                Spacer()
             }
-            
-            if showSuccess {
-                SuccessOverlay(
-                    hasNext: nextLetter != nil,
-                    onNext: {
-                        if let next = nextLetter {
-                            currentLetter = next
-                            paths = []
-                            currentPath = Path()
-                            progress = 0
-                            visitedQuadrants.removeAll()
-                            totalDistance = 0.0
-                            lastPoint = nil
-                            showSuccess = false
-                        }
-                    },
-                    onBack: {
-                        dismiss()
-                    }
-                )
+            .padding(.horizontal, 16)
+            .padding(.bottom, 8)
+
+            ConfettiView(trigger: confetti).ignoresSafeArea()
+
+            if let result {
+                completionCard(result)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+            if !newBadges.isEmpty {
+                BadgeUnlockedView(badges: newBadges) { withAnimation { newBadges = [] } }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
+        .tracksLearningTime()
+        .onAppear { startItem(speak: true) }
+        .animation(.spring(response: 0.45, dampingFraction: 0.8), value: result)
     }
-}
 
+    // MARK: Pieces
 
-struct SuccessOverlay: View {
-    @State private var scale: CGFloat = 0.5
-    let hasNext: Bool
-    let onNext: () -> Void
-    let onBack: () -> Void
-    
-    var body: some View {
-        ZStack {
-            Color.white.opacity(0.95).ignoresSafeArea()
-            
-            VStack(spacing: 30) {
-                Spacer()
-                
-                Text("🎉 Great Job!")
-                    .font(.system(size: 40, weight: .bold))
-                    .foregroundColor(.blue)
-                    .scaleEffect(scale)
-                    .onAppear {
-                        withAnimation(.spring(response: 0.5, dampingFraction: 0.6)) {
-                            scale = 1.0
-                        }
+    private var header: some View {
+        KidTopBar(title: "\(item.text)  \(item.title)", subtitle: item.subtitle.isEmpty ? nil : item.subtitle,
+                  onBack: { dismiss() }) {
+            if items.count > 1 {
+                Text("\(index + 1)/\(items.count)")
+                    .font(DS.font(.subheadline)).foregroundColor(DS.inkSoft)
+                    .monospacedDigit()
+            }
+            CircleIconButton(systemName: "speaker.wave.2.fill", color: color, label: "Hear the letter") {
+                Speaker.shared.say(item)
+            }
+        }
+        .padding(.top, 8)
+    }
+
+    private var modePicker: some View {
+        HStack(spacing: 8) {
+            ForEach(TraceMode.allCases) { m in
+                Button {
+                    guard m != mode else { return }
+                    mode = m
+                    restart()
+                } label: {
+                    Label(m.label, systemImage: m.icon)
+                        .font(DS.font(.subheadline))
+                        .foregroundColor(mode == m ? .white : DS.ink)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(Capsule().fill(mode == m ? color : DS.surface))
+                }
+                .buttonStyle(KidButtonStyle())
+                .accessibilityAddTraits(mode == m ? .isSelected : [])
+            }
+        }
+        .padding(4)
+        .background(Capsule().fill(DS.surfaceAlt))
+        .frame(maxWidth: 520)
+    }
+
+    private var boardCard: some View {
+        VStack(spacing: 10) {
+            ProgressView(value: mode == .free ? (freeModel.hasInk ? 0.5 : 0) : progress)
+                .tint(color)
+                .scaleEffect(x: 1, y: 2.2)
+                .padding(.horizontal, 8)
+                .padding(.top, 10)
+                .accessibilityLabel("Tracing progress")
+
+            Group {
+                if mode == .free {
+                    FreeWriteBoard(glyph: glyph, color: color, model: freeModel)
+                } else {
+                    TracingBoard(glyph: glyph, color: color, showHints: store.settings.showHints, mode: mode,
+                                 onEvent: react, onProgress: { progress = $0 }, onComplete: finished)
+                }
+            }
+            .id("\(item.id)-\(attempt)-\(mode.rawValue)")
+            .padding(12)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .kidCard(DS.board, radius: 32)
+    }
+
+    private var bottomBar: some View {
+        HStack(alignment: .bottom, spacing: 10) {
+            if leftHanded { actionButtons }
+            MascotView(mood: mood, message: message, size: 56, bubbleTrailing: !leftHanded)
+                .frame(maxWidth: .infinity, alignment: leftHanded ? .trailing : .leading)
+            if !leftHanded { actionButtons }
+        }
+        .frame(minHeight: 84)
+    }
+
+    private var sidePanel: some View {
+        VStack(spacing: 16) {
+            MascotView(mood: mood, message: message, size: 90, bubbleTrailing: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            if let image = item.imageName, UIImage(named: image) != nil {
+                Image(image).resizable().scaledToFit()
+                    .frame(maxHeight: 180)
+                    .padding(12)
+                    .kidCard()
+            }
+            Text(item.text)
+                .font(DS.display(96))
+                .foregroundColor(color)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .kidCard(color.opacity(0.12))
+            Spacer()
+            actionButtons
+        }
+        .frame(width: 280)
+    }
+
+    @ViewBuilder private var actionButtons: some View {
+        HStack(spacing: 10) {
+            CircleIconButton(systemName: "arrow.counterclockwise", color: DS.orange, size: 60, label: "Start again") {
+                restart()
+            }
+            if mode == .free {
+                Button(action: checkFreeWriting) {
+                    Label("Check", systemImage: "checkmark.seal.fill")
+                        .font(DS.font(.headline))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 18)
+                        .frame(minHeight: 60)
+                        .background(Capsule().fill(freeModel.hasInk ? DS.green : DS.inkSoft.opacity(0.4)))
+                }
+                .buttonStyle(KidButtonStyle())
+                .disabled(!freeModel.hasInk)
+            }
+        }
+    }
+
+    private func completionCard(_ r: Result) -> some View {
+        VStack {
+            Spacer()
+            VStack(spacing: 14) {
+                Text(r.stars == 0 ? "Almost! Try again" : (r.stars == 3 ? "Perfect!" : "Great job!"))
+                    .font(DS.font(.largeTitle))
+                    .foregroundColor(DS.ink)
+                StarRow(filled: r.stars, size: 44)
+                    .scaleEffect(result == nil ? 0.3 : 1)
+                if let score = r.score {
+                    Text("Your writing scored \(score)%")
+                        .font(DS.font(.headline, weight: .bold)).foregroundColor(DS.inkSoft)
+                }
+                HStack(spacing: 12) {
+                    BigButton(title: "Again", icon: "arrow.counterclockwise", color: DS.orange, filled: false) {
+                        restart()
                     }
-                
-                Text("You traced it perfectly!")
-                    .font(.title3)
-                    .foregroundColor(.gray)
-                
-                Spacer()
-                
-                VStack(spacing: 16) {
                     if hasNext {
-                        Button(action: onNext) {
-                            Text("Next Letter")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 56)
-                                .background(Color.blue)
-                                .cornerRadius(16)
-                                .shadow(radius: 4)
-                        }
-                    }
-                    
-                    Button(action: onBack) {
-                        Text("Back to Letters")
-                            .font(.headline)
-                            .foregroundColor(.blue)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 56)
-                            .background(Color.blue.opacity(0.1))
-                            .cornerRadius(16)
+                        BigButton(title: "Next", icon: "arrow.right", color: DS.green, action: goNext)
+                    } else {
+                        BigButton(title: "Done", icon: "checkmark", color: DS.green) { dismiss() }
                     }
                 }
-                .padding(.horizontal, 30)
-                .padding(.bottom, 40)
+            }
+            .padding(24)
+            .frame(maxWidth: 560)
+            .kidCard(DS.surface, radius: 34)
+            .padding(16)
+        }
+    }
+
+    // MARK: Flow
+
+    private func startItem(speak: Bool) {
+        progress = 0
+        result = nil
+        freeModel.clear()
+        mood = .idle
+        switch mode {
+        case .guided: message = "Start at the green dot!"
+        case .faded: message = "Follow the dots on your own!"
+        case .free: message = "Write \(item.text) by yourself!"
+        }
+        if speak {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { Speaker.shared.say(item) }
+        }
+    }
+
+    private func restart() {
+        attempt += 1
+        startItem(speak: false)
+    }
+
+    private func goNext() {
+        InterstitialAdManager.shared.showAdIfAppropriate {
+            guard hasNext else { return }
+            index += 1
+            attempt += 1
+            startItem(speak: true)
+        }
+    }
+
+    private func react(_ event: TraceEngine.Event) {
+        switch event {
+        case .strokeDone:
+            mood = .happy
+            message = ["Super!", "Nice line!", "Keep going!", "Wow!"].randomElement()
+        case .offPath:
+            mood = .oops
+            message = "Oops! Back on the road"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { if mood == .oops { mood = .idle } }
+        case .started:
+            if mood != .happy { mood = .idle; message = "That's it!" }
+        default:
+            break
+        }
+    }
+
+    private func finished(mistakes: Int) {
+        let stars = TraceTheme.stars(mistakes: mistakes)
+        complete(stars: stars, slips: mistakes, score: nil)
+    }
+
+    private func checkFreeWriting() {
+        let score = freeModel.check(against: glyph)
+        let stars = FreeWriteModel.stars(for: score)
+        if stars == 0 {
+            mood = .thinking
+            message = "Look at the green letter and try again!"
+            withAnimation { result = Result(stars: 0, score: score) }
+            return
+        }
+        complete(stars: stars, slips: 0, score: score)
+    }
+
+    private func complete(stars: Int, slips: Int, score: Int?) {
+        progress = 1
+        mood = .cheer
+        message = "You did it!"
+        confetti += 1
+        TraceFeedback.shared.celebrate()
+        let badges = store.recordTrace(item: item, stars: stars, slips: slips, mode: mode, freeScore: score)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { Speaker.shared.say(item) }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation { result = Result(stars: stars, score: score) }
+            if !badges.isEmpty {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { withAnimation { newBadges = badges } }
             }
         }
     }

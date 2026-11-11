@@ -105,6 +105,8 @@ struct CatchTheLetterGameScreen: View {
             }
         }
         .navigationTitle("Catch The Letter")
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
         .navigationBarTitleDisplayMode(.inline)
     }
     
@@ -185,6 +187,7 @@ struct CatchTheLetterGameScreen: View {
     func endGame() {
         isGameOver = true
         timer?.invalidate()
-        InterstitialAdManager.shared.showAdIfAppropriate {}
+        ProgressStore.shared.recordGameFinished()
+            InterstitialAdManager.shared.showAdIfAppropriate {}
     }
 }

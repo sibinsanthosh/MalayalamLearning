@@ -21,18 +21,29 @@ struct MalayalamLearningApp: App {
     @StateObject private var viewModel = MainViewModel()
     
     init() {
+        // This is a children's app: request only child-directed, general-audience ads
+        // (COPPA / Google Families policy) and treat users as under the age of consent.
+        let config = MobileAds.shared.requestConfiguration
+        config.tagForChildDirectedTreatment = true
+        config.tagForUnderAgeOfConsent = true
+        config.maxAdContentRating = .general
         MobileAds.shared.start(completionHandler: nil)
     }
-    
+
+    private var bannerHeight: CGFloat { UIDevice.current.userInterfaceIdiom == .pad ? 90 : 50 }
+
     var body: some Scene {
         WindowGroup {
+            // The banner gets its own strip below the app so it never covers buttons or content.
             VStack(spacing: 0) {
                 HomeScreen(viewModel: viewModel)
-                
                 BannerAdView(adUnitID: "ca-app-pub-2521590777237351/5073128198")
-                    .frame(height: 50)
+                    .frame(height: bannerHeight)
+                    .frame(maxWidth: .infinity)
             }
+            .background(DS.surface.ignoresSafeArea())
             .ignoresSafeArea(.keyboard)
+            .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         }
     }
 }
