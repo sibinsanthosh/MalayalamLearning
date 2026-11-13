@@ -80,6 +80,8 @@ struct MemoryMatchGameScreen: View {
             }
         }
         .navigationTitle("Memory Match")
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: setupGame)
     }
@@ -110,9 +112,6 @@ struct MemoryMatchGameScreen: View {
                     cards[index].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                     
-                    if moves % 5 == 0 {
-                        InterstitialAdManager.shared.showAdIfAppropriate {}
-                    }
                 }
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = nil
@@ -124,6 +123,8 @@ struct MemoryMatchGameScreen: View {
                         withAnimation {
                             isGameOver = true
                         }
+                        ProgressStore.shared.recordGameFinished()
+                        InterstitialAdManager.shared.showAdIfAppropriate {}
                     }
                 }
                 

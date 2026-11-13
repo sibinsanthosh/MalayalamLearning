@@ -28,6 +28,8 @@ struct LetterQuizGameScreen: View {
             }
         }
         .navigationTitle("Letter Quiz")
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: setupGame)
     }
@@ -128,6 +130,8 @@ struct LetterQuizGameScreen: View {
         questionCount += 1
         if questionCount > totalQuestions {
             isGameOver = true
+            ProgressStore.shared.recordGameFinished()
+            InterstitialAdManager.shared.showAdIfAppropriate {}
             return
         }
         
@@ -151,10 +155,6 @@ struct LetterQuizGameScreen: View {
             score += 1
         } else {
             feedbackIsCorrect = false
-        }
-        
-        if questionCount % 3 == 0 {
-            InterstitialAdManager.shared.showAdIfAppropriate {}
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

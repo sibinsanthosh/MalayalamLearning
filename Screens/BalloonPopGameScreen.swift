@@ -52,6 +52,8 @@ struct BalloonPopGameScreen: View {
             }
         }
         .navigationTitle("Balloon Pop")
+        .environment(\.colorScheme, .light)
+        .tracksLearningTime()
         .navigationBarTitleDisplayMode(.inline)
     }
     

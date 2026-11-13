@@ -49,6 +49,7 @@ struct StorySelectScreen: View {
             }
         }
         .navigationTitle("Stories")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -108,6 +109,7 @@ struct IPadStorySelectView: View {
             }
         }
         .navigationTitle("Storybook Library")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

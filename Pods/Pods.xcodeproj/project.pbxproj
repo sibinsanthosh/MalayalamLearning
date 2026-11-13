@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -21,15 +21,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		08F9F2FA3F0E19454931DF488235EA1E /* Pods-MalayalamLearning-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC47808D52857E43C62D95F85399CC4B /* Pods-MalayalamLearning-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08F9F2FA3F0E19454931DF488235EA1E /* Pods-MalayalamLearning-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F486437AE186673C3F01A5626C234D /* Pods-MalayalamLearning-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FE9F6CC42D9A1D24BC97D24BF82B34E /* Pods-MalayalamLearningTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9806540455EFF712A9E9378E022D0492 /* Pods-MalayalamLearningTests-dummy.m */; };
 		1493DD91336DE7675C83360B987057DD /* GoogleMobileAdsPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837746640689795BB54F973086CE1EAE /* GoogleMobileAdsPlaceholder.swift */; };
 		1B5689F04D2334999DA3AB3B51312D87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		2EE0627010F3C7E07C3825D2BACDBD98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		3317DC9751692475C7BF6CA18EE999CE /* Google-Mobile-Ads-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C82CB052E442BE450E1415431F9A60D4 /* Google-Mobile-Ads-SDK-dummy.m */; };
 		510E3750BD2A8E80DD85CF7549003D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		75B82F19EF8F661971AAE32FA50D6310 /* Pods-MalayalamLearningTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B88EB0B7221779B8875F971C4AA59FDB /* Pods-MalayalamLearningTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7888B6977A7C6C5B379A55369CE64CD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 50A18E109306BAF831541AA5B4E47979 /* PrivacyInfo.xcprivacy */; };
 		BD90468037AC7AC384A68A4EABE27F84 /* Google-Mobile-Ads-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87421B0407F2349DB2D5C82CA3794AD6 /* Google-Mobile-Ads-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E2E4F930EAA4CDB6A3C1716056B10A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DE66624D7FB7B06FF2E3D35C4D711082 /* PrivacyInfo.xcprivacy */; };
-		F843872462A0E73C55BBE8EC448D1B8A /* Pods-MalayalamLearning-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB850030EEC48B761CC78B51D001C /* Pods-MalayalamLearning-dummy.m */; };
+		F843872462A0E73C55BBE8EC448D1B8A /* Pods-MalayalamLearning-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8F82143093C8BA586F8C7D1BA17C0 /* Pods-MalayalamLearning-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,39 +71,55 @@
 			remoteGlobalIDString = FEA3B3A570634836C0457F3D7CEF1699;
 			remoteInfo = "Google-Mobile-Ads-SDK";
 		};
+		DA3F35BD0CCA118172881AB9DBB66C5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3259B5786C94AEEBD9582CCE345E95C5;
+			remoteInfo = "Pods-MalayalamLearning";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		058DA9643E3EAD4930586CB78E3E1F64 /* ResourceBundle-GoogleMobileAdsResources-Google-Mobile-Ads-SDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-GoogleMobileAdsResources-Google-Mobile-Ads-SDK-Info.plist"; sourceTree = "<group>"; };
-		1BBFB850030EEC48B761CC78B51D001C /* Pods-MalayalamLearning-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MalayalamLearning-dummy.m"; sourceTree = "<group>"; };
+		1424F134EEFF826DE26F32CD5B6DEC8A /* Pods-MalayalamLearningTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearningTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		14C8F82143093C8BA586F8C7D1BA17C0 /* Pods-MalayalamLearning-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MalayalamLearning-dummy.m"; sourceTree = "<group>"; };
+		1EAE50A173D670C3570095FBF33D1F02 /* Pods-MalayalamLearningTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MalayalamLearningTests.modulemap"; sourceTree = "<group>"; };
+		2819D1AFB96CB29469C725CFBE9388BD /* Pods-MalayalamLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		28EC0D6B45622794297A1133DA37EAEC /* ResourceBundle-UserMessagingPlatformResources-GoogleUserMessagingPlatform-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-UserMessagingPlatformResources-GoogleUserMessagingPlatform-Info.plist"; sourceTree = "<group>"; };
+		293BD0DC396BC1AB1B660EDAAD2E37D0 /* Pods-MalayalamLearningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearningTests.debug.xcconfig"; sourceTree = "<group>"; };
 		31ABF05F4F720C8E40F38BAD866EBDC0 /* GoogleUserMessagingPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleUserMessagingPlatform.release.xcconfig; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3998091512768CD07733CB4F02B4BD9F /* Google-Mobile-Ads-SDK-GoogleMobileAdsResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Google-Mobile-Ads-SDK-GoogleMobileAdsResources"; path = GoogleMobileAdsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD97D982CAB87B29E6846F927335BF3 /* Google-Mobile-Ads-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		3CAD7FD165FDFF75C9B1535635E69378 /* Pods-MalayalamLearning.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MalayalamLearning.modulemap"; sourceTree = "<group>"; };
 		3CB2870152A11C8D7854F09D9999E402 /* Google-Mobile-Ads-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.debug.xcconfig"; sourceTree = "<group>"; };
+		3CC420D79C9531031F99B4A3A7F58D31 /* Pods-MalayalamLearning-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearning-acknowledgements.plist"; sourceTree = "<group>"; };
 		50A18E109306BAF831541AA5B4E47979 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "Frameworks/GoogleMobileAdsFramework/GoogleMobileAds.xcframework/ios-arm64/GoogleMobileAds.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
-		6359E3951E7E406090333179A1DED523 /* Pods-MalayalamLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearning.release.xcconfig"; sourceTree = "<group>"; };
-		6E557DD25ECB8B5DD736B102A33EE697 /* Pods-MalayalamLearning-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MalayalamLearning-resources.sh"; sourceTree = "<group>"; };
-		70DC82EDE3C75E0C8E78DE9B09B99C62 /* Pods-MalayalamLearning-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearning-acknowledgements.plist"; sourceTree = "<group>"; };
-		73F2D36D4C5CFF8D2DC06B261B164799 /* Pods-MalayalamLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearning.debug.xcconfig"; sourceTree = "<group>"; };
-		76EDBAF02D35A4D6E6F9659E6A12242E /* Pods-MalayalamLearning-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MalayalamLearning-acknowledgements.markdown"; sourceTree = "<group>"; };
+		759EF3CC97362FDDC501031361B29EBB /* Pods-MalayalamLearningTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MalayalamLearningTests"; path = Pods_MalayalamLearningTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBE2B0C28630C727E998777ED1DCF4B /* Google-Mobile-Ads-SDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Google-Mobile-Ads-SDK-Info.plist"; sourceTree = "<group>"; };
+		82D362F24F5DC2AAC3CD3226394716B7 /* Pods-MalayalamLearning-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MalayalamLearning-acknowledgements.markdown"; sourceTree = "<group>"; };
 		837746640689795BB54F973086CE1EAE /* GoogleMobileAdsPlaceholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoogleMobileAdsPlaceholder.swift; path = Sources/GoogleMobileAdsPlaceholder.swift; sourceTree = "<group>"; };
 		87421B0407F2349DB2D5C82CA3794AD6 /* Google-Mobile-Ads-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Google-Mobile-Ads-SDK-umbrella.h"; sourceTree = "<group>"; };
 		8A377C18F92A8A511869ADA54B5652D2 /* GoogleUserMessagingPlatform-UserMessagingPlatformResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "GoogleUserMessagingPlatform-UserMessagingPlatformResources"; path = UserMessagingPlatformResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBCE96FF45F89EB473BBEC6521C7C7E /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = UserMessagingPlatform.xcframework; path = Frameworks/Release/UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
-		94A2A7E9F33A8D096D2E9D4CC42E7A53 /* Pods-MalayalamLearning-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearning-Info.plist"; sourceTree = "<group>"; };
+		91C65EB16E652F691F783C3BF9389E89 /* Pods-MalayalamLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearning.release.xcconfig"; sourceTree = "<group>"; };
 		94E58860FE9DF20A35AACB84AF645624 /* Google-Mobile-Ads-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Google-Mobile-Ads-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		9806540455EFF712A9E9378E022D0492 /* Pods-MalayalamLearningTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MalayalamLearningTests-dummy.m"; sourceTree = "<group>"; };
 		9CE2B1E5F4AFF15A541642B247E71E95 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMobileAds.xcframework; path = Frameworks/GoogleMobileAdsFramework/GoogleMobileAds.xcframework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E992DB4A8691BB6402EC1DBC787C448 /* Pods-MalayalamLearning-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearning-Info.plist"; sourceTree = "<group>"; };
+		AC4C2AAFB77506533704468C32E3B90B /* Pods-MalayalamLearningTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MalayalamLearningTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B7AA9153FA310AFB562E312FCDDEA648 /* Pods-MalayalamLearningTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MalayalamLearningTests-Info.plist"; sourceTree = "<group>"; };
+		B88EB0B7221779B8875F971C4AA59FDB /* Pods-MalayalamLearningTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MalayalamLearningTests-umbrella.h"; sourceTree = "<group>"; };
 		C82CB052E442BE450E1415431F9A60D4 /* Google-Mobile-Ads-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Google-Mobile-Ads-SDK-dummy.m"; sourceTree = "<group>"; };
 		D10F663B298C8F5CE4AEAD11558C0C20 /* Google-Mobile-Ads-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Google-Mobile-Ads-SDK.modulemap"; sourceTree = "<group>"; };
-		DC47808D52857E43C62D95F85399CC4B /* Pods-MalayalamLearning-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MalayalamLearning-umbrella.h"; sourceTree = "<group>"; };
+		D4798571F71136AA9C4FE3EC5E3CED1E /* Pods-MalayalamLearning-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MalayalamLearning-resources.sh"; sourceTree = "<group>"; };
 		DE66624D7FB7B06FF2E3D35C4D711082 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "Frameworks/Release/UserMessagingPlatform.xcframework/ios-arm64/UserMessagingPlatform.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		E3F486437AE186673C3F01A5626C234D /* Pods-MalayalamLearning-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MalayalamLearning-umbrella.h"; sourceTree = "<group>"; };
 		E6AFE911BCBC86108CD1441C3F7B3756 /* Google-Mobile-Ads-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Google-Mobile-Ads-SDK-prefix.pch"; sourceTree = "<group>"; };
 		EB61DA7FFE6D9B8661EB9F7850AF655D /* GoogleUserMessagingPlatform-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleUserMessagingPlatform-xcframeworks.sh"; sourceTree = "<group>"; };
-		EBAEA17E9C4CCFF1695FC813E71BA8B6 /* Pods-MalayalamLearning.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MalayalamLearning.modulemap"; sourceTree = "<group>"; };
+		F1147A18B2F083DD38E01590E9A43FFC /* Pods-MalayalamLearningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MalayalamLearningTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6F82DDF978E87F299E0AFC525EF8D30 /* Pods-MalayalamLearning */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MalayalamLearning"; path = Pods_MalayalamLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ECCB3B4E33C0FDD00B394CC2C7EA2E /* Google-Mobile-Ads-SDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Google-Mobile-Ads-SDK"; path = Google_Mobile_Ads_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9FA647701D5D9784F7B39F699820EB /* GoogleUserMessagingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleUserMessagingPlatform.debug.xcconfig; sourceTree = "<group>"; };
@@ -134,6 +153,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C714DCB0C909BD5295E9A9469F6B8C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EE0627010F3C7E07C3825D2BACDBD98 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,40 +203,33 @@
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
-		99031343C73AABF4858D66695B7C7EAA /* Products */ = {
+		93A5896247CC8653304CF67F46A17535 /* Pods-MalayalamLearning */ = {
+			isa = PBXGroup;
+			children = (
+				3CAD7FD165FDFF75C9B1535635E69378 /* Pods-MalayalamLearning.modulemap */,
+				82D362F24F5DC2AAC3CD3226394716B7 /* Pods-MalayalamLearning-acknowledgements.markdown */,
+				3CC420D79C9531031F99B4A3A7F58D31 /* Pods-MalayalamLearning-acknowledgements.plist */,
+				14C8F82143093C8BA586F8C7D1BA17C0 /* Pods-MalayalamLearning-dummy.m */,
+				9E992DB4A8691BB6402EC1DBC787C448 /* Pods-MalayalamLearning-Info.plist */,
+				D4798571F71136AA9C4FE3EC5E3CED1E /* Pods-MalayalamLearning-resources.sh */,
+				E3F486437AE186673C3F01A5626C234D /* Pods-MalayalamLearning-umbrella.h */,
+				2819D1AFB96CB29469C725CFBE9388BD /* Pods-MalayalamLearning.debug.xcconfig */,
+				91C65EB16E652F691F783C3BF9389E89 /* Pods-MalayalamLearning.release.xcconfig */,
+			);
+			name = "Pods-MalayalamLearning";
+			path = "Target Support Files/Pods-MalayalamLearning";
+			sourceTree = "<group>";
+		};
+		A56F740D5A795EC382783A3B4AEDCD1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				F8ECCB3B4E33C0FDD00B394CC2C7EA2E /* Google-Mobile-Ads-SDK */,
 				3998091512768CD07733CB4F02B4BD9F /* Google-Mobile-Ads-SDK-GoogleMobileAdsResources */,
 				8A377C18F92A8A511869ADA54B5652D2 /* GoogleUserMessagingPlatform-UserMessagingPlatformResources */,
 				F6F82DDF978E87F299E0AFC525EF8D30 /* Pods-MalayalamLearning */,
+				759EF3CC97362FDDC501031361B29EBB /* Pods-MalayalamLearningTests */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A7D0CD43C655301AC43882D9BFD843BA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B11295FC6D6E9C932724FF5C4890DA02 /* Pods-MalayalamLearning */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B11295FC6D6E9C932724FF5C4890DA02 /* Pods-MalayalamLearning */ = {
-			isa = PBXGroup;
-			children = (
-				EBAEA17E9C4CCFF1695FC813E71BA8B6 /* Pods-MalayalamLearning.modulemap */,
-				76EDBAF02D35A4D6E6F9659E6A12242E /* Pods-MalayalamLearning-acknowledgements.markdown */,
-				70DC82EDE3C75E0C8E78DE9B09B99C62 /* Pods-MalayalamLearning-acknowledgements.plist */,
-				1BBFB850030EEC48B761CC78B51D001C /* Pods-MalayalamLearning-dummy.m */,
-				94A2A7E9F33A8D096D2E9D4CC42E7A53 /* Pods-MalayalamLearning-Info.plist */,
-				6E557DD25ECB8B5DD736B102A33EE697 /* Pods-MalayalamLearning-resources.sh */,
-				DC47808D52857E43C62D95F85399CC4B /* Pods-MalayalamLearning-umbrella.h */,
-				73F2D36D4C5CFF8D2DC06B261B164799 /* Pods-MalayalamLearning.debug.xcconfig */,
-				6359E3951E7E406090333179A1DED523 /* Pods-MalayalamLearning.release.xcconfig */,
-			);
-			name = "Pods-MalayalamLearning";
-			path = "Target Support Files/Pods-MalayalamLearning";
 			sourceTree = "<group>";
 		};
 		C899256EE1C959A4EBC9F48E72A6528D /* Support Files */ = {
@@ -230,8 +250,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				FA8C76703EDBF6E7F7BFB2AF887CBFCC /* Pods */,
-				99031343C73AABF4858D66695B7C7EAA /* Products */,
-				A7D0CD43C655301AC43882D9BFD843BA /* Targets Support Files */,
+				A56F740D5A795EC382783A3B4AEDCD1B /* Products */,
+				E105CADEFBD1F9C289FFCD2459FAA33F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +272,31 @@
 				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5D9F979C8A1B96538496F6841C114CE /* Pods-MalayalamLearningTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EAE50A173D670C3570095FBF33D1F02 /* Pods-MalayalamLearningTests.modulemap */,
+				AC4C2AAFB77506533704468C32E3B90B /* Pods-MalayalamLearningTests-acknowledgements.markdown */,
+				1424F134EEFF826DE26F32CD5B6DEC8A /* Pods-MalayalamLearningTests-acknowledgements.plist */,
+				9806540455EFF712A9E9378E022D0492 /* Pods-MalayalamLearningTests-dummy.m */,
+				B7AA9153FA310AFB562E312FCDDEA648 /* Pods-MalayalamLearningTests-Info.plist */,
+				B88EB0B7221779B8875F971C4AA59FDB /* Pods-MalayalamLearningTests-umbrella.h */,
+				293BD0DC396BC1AB1B660EDAAD2E37D0 /* Pods-MalayalamLearningTests.debug.xcconfig */,
+				F1147A18B2F083DD38E01590E9A43FFC /* Pods-MalayalamLearningTests.release.xcconfig */,
+			);
+			name = "Pods-MalayalamLearningTests";
+			path = "Target Support Files/Pods-MalayalamLearningTests";
+			sourceTree = "<group>";
+		};
+		E105CADEFBD1F9C289FFCD2459FAA33F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				93A5896247CC8653304CF67F46A17535 /* Pods-MalayalamLearning */,
+				D5D9F979C8A1B96538496F6841C114CE /* Pods-MalayalamLearningTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		E3858A10F7518C7CDDEBF0AC3778E891 /* Support Files */ = {
@@ -299,6 +344,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0F9FE06D268C4531CC0940351D819C6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75B82F19EF8F661971AAE32FA50D6310 /* Pods-MalayalamLearningTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B23F9353E3148B809D4BA25A333D0F47 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +425,25 @@
 			productReference = 8A377C18F92A8A511869ADA54B5652D2 /* GoogleUserMessagingPlatform-UserMessagingPlatformResources */;
 			productType = "com.apple.product-type.bundle";
 		};
+		FA965CAFA2425AA447F5E474EFE9EF65 /* Pods-MalayalamLearningTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 011DE3E1AAFFF8BAE59EEC712BA9753D /* Build configuration list for PBXNativeTarget "Pods-MalayalamLearningTests" */;
+			buildPhases = (
+				0F9FE06D268C4531CC0940351D819C6C /* Headers */,
+				D3E4BD8BA9D27F16FB62D53F5C5F2935 /* Sources */,
+				C714DCB0C909BD5295E9A9469F6B8C32 /* Frameworks */,
+				75C176172CC7F33240C35E8257D906F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F9E267CECDEFC5763349F7FA7E1F9BC /* PBXTargetDependency */,
+			);
+			name = "Pods-MalayalamLearningTests";
+			productName = Pods_MalayalamLearningTests;
+			productReference = 759EF3CC97362FDDC501031361B29EBB /* Pods-MalayalamLearningTests */;
+			productType = "com.apple.product-type.framework";
+		};
 		FEA3B3A570634836C0457F3D7CEF1699 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0133F7ACE4F2664542B16D7BCEF4D52E /* Build configuration list for PBXNativeTarget "Google-Mobile-Ads-SDK" */;
@@ -403,7 +475,7 @@
 				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 16.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -413,7 +485,7 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 99031343C73AABF4858D66695B7C7EAA /* Products */;
+			productRefGroup = A56F740D5A795EC382783A3B4AEDCD1B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -422,12 +494,20 @@
 				458B188365A307B3C128ABF524D1A3E3 /* GoogleUserMessagingPlatform */,
 				63A7C675C13F87669AF56006D943998B /* GoogleUserMessagingPlatform-UserMessagingPlatformResources */,
 				3259B5786C94AEEBD9582CCE345E95C5 /* Pods-MalayalamLearning */,
+				FA965CAFA2425AA447F5E474EFE9EF65 /* Pods-MalayalamLearningTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1CF44B3B9ECB7DB1FE1C8B3C244E4EAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75C176172CC7F33240C35E8257D906F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,6 +592,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3E4BD8BA9D27F16FB62D53F5C5F2935 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE9F6CC42D9A1D24BC97D24BF82B34E /* Pods-MalayalamLearningTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCEEB9F8EA09BB4BFEBDBD7594F8545D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -555,6 +643,12 @@
 			target = 458B188365A307B3C128ABF524D1A3E3 /* GoogleUserMessagingPlatform */;
 			targetProxy = 368952364A491993A66D6C0087134994 /* PBXContainerItemProxy */;
 		};
+		9F9E267CECDEFC5763349F7FA7E1F9BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MalayalamLearning";
+			target = 3259B5786C94AEEBD9582CCE345E95C5 /* Pods-MalayalamLearning */;
+			targetProxy = DA3F35BD0CCA118172881AB9DBB66C5C /* PBXContainerItemProxy */;
+		};
 		CCBB3989376DD2F6C3AFAFD5A9A3A5AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Google-Mobile-Ads-SDK-GoogleMobileAdsResources";
@@ -566,7 +660,7 @@
 /* Begin XCBuildConfiguration section */
 		10B871EB4773C571DA31A9AEC7364102 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73F2D36D4C5CFF8D2DC06B261B164799 /* Pods-MalayalamLearning.debug.xcconfig */;
+			baseConfigurationReference = 2819D1AFB96CB29469C725CFBE9388BD /* Pods-MalayalamLearning.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -603,9 +697,48 @@
 			};
 			name = Debug;
 		};
+		13BB7411C898B4904B23A2BE8991CF1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293BD0DC396BC1AB1B660EDAAD2E37D0 /* Pods-MalayalamLearningTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-MalayalamLearningTests/Pods-MalayalamLearningTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MalayalamLearningTests/Pods-MalayalamLearningTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1605F95201400F1643D75EE74CAAD2A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6359E3951E7E406090333179A1DED523 /* Pods-MalayalamLearning.release.xcconfig */;
+			baseConfigurationReference = 91C65EB16E652F691F783C3BF9389E89 /* Pods-MalayalamLearning.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -651,7 +784,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,7 +814,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/Google-Mobile-Ads-SDK/Google-Mobile-Ads-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -776,7 +909,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Google-Mobile-Ads-SDK";
 				IBSC_MODULE = Google_Mobile_Ads_SDK;
 				INFOPLIST_FILE = "Target Support Files/Google-Mobile-Ads-SDK/ResourceBundle-GoogleMobileAdsResources-Google-Mobile-Ads-SDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = GoogleMobileAdsResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -793,7 +926,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -811,7 +944,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleUserMessagingPlatform";
 				IBSC_MODULE = GoogleUserMessagingPlatform;
 				INFOPLIST_FILE = "Target Support Files/GoogleUserMessagingPlatform/ResourceBundle-UserMessagingPlatformResources-GoogleUserMessagingPlatform-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = UserMessagingPlatformResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -839,7 +972,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/Google-Mobile-Ads-SDK/Google-Mobile-Ads-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -869,7 +1002,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Google-Mobile-Ads-SDK";
 				IBSC_MODULE = Google_Mobile_Ads_SDK;
 				INFOPLIST_FILE = "Target Support Files/Google-Mobile-Ads-SDK/ResourceBundle-GoogleMobileAdsResources-Google-Mobile-Ads-SDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = GoogleMobileAdsResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -948,7 +1081,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleUserMessagingPlatform";
 				IBSC_MODULE = GoogleUserMessagingPlatform;
 				INFOPLIST_FILE = "Target Support Files/GoogleUserMessagingPlatform/ResourceBundle-UserMessagingPlatformResources-GoogleUserMessagingPlatform-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				PRODUCT_NAME = UserMessagingPlatformResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -957,9 +1090,58 @@
 			};
 			name = Debug;
 		};
+		FCAF41367760DC804B543BEF9C9D7002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1147A18B2F083DD38E01590E9A43FFC /* Pods-MalayalamLearningTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-MalayalamLearningTests/Pods-MalayalamLearningTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MalayalamLearningTests/Pods-MalayalamLearningTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		011DE3E1AAFFF8BAE59EEC712BA9753D /* Build configuration list for PBXNativeTarget "Pods-MalayalamLearningTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13BB7411C898B4904B23A2BE8991CF1C /* Debug */,
+				FCAF41367760DC804B543BEF9C9D7002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0133F7ACE4F2664542B16D7BCEF4D52E /* Build configuration list for PBXNativeTarget "Google-Mobile-Ads-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

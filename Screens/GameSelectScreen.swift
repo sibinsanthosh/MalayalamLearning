@@ -29,6 +29,28 @@ struct GameSelectScreen: View {
             
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
+                    NavigationLink(destination: TraceGameScreen(kind: .pop)) {
+                        DashboardCard(
+                            title: "Trace & Pop",
+                            iconName: "scribble.variable",
+                            color1: Color(hex: "8A5CF6"),
+                            color2: Color(hex: "FF6FA5"),
+                            action: {}
+                        )
+                        .allowsHitTesting(false)
+                    }
+
+                    NavigationLink(destination: TraceGameScreen(kind: .firstLetter)) {
+                        DashboardCard(
+                            title: "First Letter",
+                            iconName: "photo.on.rectangle.angled",
+                            color1: Color(hex: "1FC7B6"),
+                            color2: Color(hex: "4FB6F7"),
+                            action: {}
+                        )
+                        .allowsHitTesting(false)
+                    }
+
                     NavigationLink(destination: BalloonPopGameScreen(viewModel: viewModel)) {
                         DashboardCard(
                             title: "Balloon Pop",
@@ -88,6 +110,7 @@ struct GameSelectScreen: View {
             }
         }
         .navigationTitle("Games")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -132,13 +155,14 @@ struct IPadGameSelectView: View {
                         
                         // Points Banner
                         HStack(spacing: 8) {
-                            Text("⭐")
+                            Image(systemName: "star.fill")
                                 .font(.system(size: 22))
+                                .foregroundColor(Color(hex: "FFC83D"))
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("TOTAL POINTS")
                                     .font(.system(size: 10, weight: .heavy))
                                     .foregroundColor(.secondary)
-                                Text("\(viewModel.progress.points) Pts")
+                                Text("\(ProgressStore.shared.active.points) Pts")
                                     .font(.system(size: 18, weight: .black))
                                     .foregroundColor(Color(hex: "B78103"))
                             }
@@ -154,6 +178,32 @@ struct IPadGameSelectView: View {
                     
                     // 3-Column Games Grid
                     LazyVGrid(columns: columns, spacing: 24) {
+                        NavigationLink(destination: TraceGameScreen(kind: .pop)) {
+                            IPadGameCard(
+                                title: "Trace & Pop",
+                                titleMl: "എഴുതി പൊട്ടിക്കാം",
+                                subtitle: "Trace the letter on each balloon to pop it — with your finger or Apple Pencil",
+                                skillTag: "Handwriting",
+                                iconName: "scribble.variable",
+                                systemIconFallback: "pencil",
+                                colors: [Color(hex: "8A5CF6"), Color(hex: "FF6FA5")]
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+
+                        NavigationLink(destination: TraceGameScreen(kind: .firstLetter)) {
+                            IPadGameCard(
+                                title: "First Letter",
+                                titleMl: "ആദ്യാക്ഷരം",
+                                subtitle: "Look at the picture and trace the letter its word starts with",
+                                skillTag: "Phonics + Writing",
+                                iconName: "photo.on.rectangle.angled",
+                                systemIconFallback: "photo",
+                                colors: [Color(hex: "1FC7B6"), Color(hex: "4FB6F7")]
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+
                         NavigationLink(destination: BalloonPopGameScreen(viewModel: viewModel)) {
                             IPadGameCard(
                                 title: "Balloon Pop",
@@ -225,6 +275,7 @@ struct IPadGameSelectView: View {
             }
         }
         .navigationTitle("Games Arena")
+        .environment(\.colorScheme, .light)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
